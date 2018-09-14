@@ -1,0 +1,3 @@
+rootProject.name = 'EvenEverApp'
+
+include ':app'
