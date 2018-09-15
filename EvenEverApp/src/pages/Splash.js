@@ -5,8 +5,20 @@ import {
     Text,
     View
 } from 'react-native';
+// import NavigationUtil from '../utils/NavigationUtils';
 
 export class Splash extends Component {
+    constructor(props){
+        super(props);
+
+    }
+    componentWillMount(){
+        setTimeout(() => {
+            // NavigationUtil.routerReset(this.props.navigation, 'Login');       
+            this.props.navigation.navigate('Main'); 
+        }, 1000);
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -25,7 +37,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#F5FCFF',
     },
     welcome: {
-        fontSize: 20,
+        fontSize: 40,
         textAlign: 'center',
         margin: 10,
     },
@@ -35,3 +47,4 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
 });
+
