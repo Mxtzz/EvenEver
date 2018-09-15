@@ -15,15 +15,9 @@ export class Splash extends Component {
     componentDidMount(){
         setTimeout(() => {
             this.props.navigation.navigate('Main'); 
-        }, 2000);
-    }
-    
-    
-    componentWillUnmount(){
-        
+        }, 1000);
     }
 
-    
     render() {
         return (
             <View style={{flex:1}}>

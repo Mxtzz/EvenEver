@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from 'react-navigation';
-import { MemoPage } from './MemoPage';
+import { MemoPage } from './MemoPages/MemoPage';
 import { UserPage } from './UserPage';
 import { NewsPage } from './NewsPage';
 

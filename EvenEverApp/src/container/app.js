@@ -17,7 +17,8 @@ import { Splash } from '../pages/Splash';
 import { Login } from '../pages/Login';
 import { SignUp } from '../pages/SignUp';
 
-import { MemoPage } from '../pages/MemoPage';
+import { MemoPage } from '../pages/MemoPages/MemoPage';
+import { NewMemo } from '../pages/MemoPages/NewMemo';
 import { UserPage } from '../pages/UserPage';
 import { NewsPage } from '../pages/NewsPage';
 
@@ -27,13 +28,20 @@ const SignIn = createStackNavigator(
         SignUp: SignUp,
     },
     {
-        initialRouteName: 'Splash',
+        initialRouteName: 'Login',
     }
 )
 
+const MemoNavigator = createStackNavigator(
+    {
+        MemoPage: MemoPage,
+        NewMemo: NewMemo,
+    }
+);
+
 const Main = createBottomTabNavigator(
     {
-        Memo: MemoPage,
+        Memo: MemoNavigator,
         News: NewsPage,
         User: UserPage,
     },{
@@ -55,6 +63,10 @@ const Main = createBottomTabNavigator(
         tabBarOptions: {
             activeTintColor: 'tomato',
             inactiveTintColor: 'gray',
+            tabStyle: {
+                backgroundColor: '#FFEECC'
+                // backgroundColor: 'gray'
+            }
         },
     }
 );
