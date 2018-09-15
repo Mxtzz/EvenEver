@@ -3,28 +3,50 @@ import {
     Platform,
     StyleSheet,
     Text,
-    View
+    View,
 } from 'react-native';
-// import NavigationUtil from '../utils/NavigationUtils';
 
 export class Splash extends Component {
     constructor(props){
         super(props);
-
+        // this.spinValue = new Animated.Value(0);
     }
-    componentWillMount(){
+
+    componentDidMount(){
         setTimeout(() => {
-            // NavigationUtil.routerReset(this.props.navigation, 'Login');       
             this.props.navigation.navigate('Main'); 
-        }, 1000);
+        }, 2000);
+    }
+    
+    
+    componentWillUnmount(){
+        
     }
 
+    
     render() {
         return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>EvenEver</Text>
-                <Text style={styles.instructions}>A Great Memo</Text>
+            <View style={{flex:1}}>
+                <SplashMain></SplashMain>
             </View>
+        );
+    }
+}
+
+export class SplashMain extends Component{
+    constructor(props){
+        super(props);
+    }
+    render() {
+        return (
+            (
+            <View style={styles.container}>
+                <Text style={styles.welcome} onPress={()=>{this.props.navigation.navigate('Main')}}>EvenEver</Text>
+                <Text style={styles.instructions}>A Great Memo</Text>
+                <Text style={styles.version}>v0.0.1</Text>
+            </View>
+            )
+            
         );
     }
 }
@@ -34,7 +56,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#FFEECC',
     },
     welcome: {
         fontSize: 40,
@@ -45,6 +67,11 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#333333',
         marginBottom: 5,
+    },
+    version: {
+        textAlign: 'center',
+        color: '#333333',
+        marginTop: 150,
     },
 });
 
