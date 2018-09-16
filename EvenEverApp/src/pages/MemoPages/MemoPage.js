@@ -19,14 +19,7 @@ export class MemoPage extends Component {
     state = {
         fadeAnim: new Animated.Value(0),  // 透明度初始值设为0
     }
-    static navigationOptions = {
-        title: 'MemoPage',
-        headerBackTitle: '',
-        headerStyle: {
-            backgroundColor: 'tomato'
-        },
-        headerTintColor: '#FFEECC'
-    };
+    
     
     componentDidMount() {
         Animated.timing(                  // 随时间变化而执行动画
@@ -53,8 +46,6 @@ export class MemoPage extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: '#FFEECC',
     },
     welcome: {

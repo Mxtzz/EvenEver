@@ -5,12 +5,14 @@ import {
     Text,
     View,
     Animated,
-    Easing,
+    Dimensions
 } from 'react-native';
 
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
 import icoMoonConfig from '../../../selection.json';
 const _Icon = createIconSetFromIcoMoon(icoMoonConfig);
+
+const { width, height } = Dimensions.get('window');
 
 export class NewMemo extends Component {
     constructor(props){
@@ -37,7 +39,9 @@ export class NewMemo extends Component {
             <View style={styles.container}>
                 <Text style={styles.welcome} onPress={()=>{this.props.navigation.navigate('Main')}}>EvenEver</Text>
                 <Text style={styles.instructions}>New Memo</Text>
-                
+                <View style={styles.footer}>
+                    <Text>12312312</Text>
+                </View>
             </View>
         );
     }
@@ -55,5 +59,12 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         margin: 10,
     },
+    footer: {
+        position: 'absolute',
+        height: 50,
+        backgroundColor:'gray',
+        bottom:0,
+        width: width,
+    }
     
 });

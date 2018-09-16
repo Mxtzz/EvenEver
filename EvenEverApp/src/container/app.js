@@ -32,30 +32,11 @@ const SignIn = createStackNavigator(
     }
 )
 
-const MemoNavigator = createStackNavigator(
+const TabPage = createBottomTabNavigator(
     {
-        MemoPage: MemoPage,
-        NewMemo: NewMemo,
-    }
-);
-
-const NewsNavigator = createStackNavigator(
-    {
-        NewsPage: NewsPage,
-    }
-);
-
-const UserNavigator = createStackNavigator(
-    {
-        UserPage: UserPage,
-    }
-);
-
-const Main = createBottomTabNavigator(
-    {
-        Memo: MemoNavigator,
-        News: NewsNavigator,
-        User: UserNavigator,
+        Memo: MemoPage,
+        News: NewsPage,
+        User: UserPage,
     },{
         navigationOptions: ({ navigation }) => ({
             tabBarIcon: ({ focused, tintColor }) => {
@@ -71,7 +52,6 @@ const Main = createBottomTabNavigator(
 
                 return <_Icon name={iconName} size={25} color={tintColor} />;
             },
-            tabBarVisible: navigation.state.index == 0 || navigation.state.index == null ? true : false,
         }),
         tabBarOptions: {
             activeTintColor: 'tomato',
@@ -85,11 +65,29 @@ const Main = createBottomTabNavigator(
     }
 );
 
+const MainStack = createStackNavigator(
+    {
+        TabPage: TabPage,
+        MemoPage: MemoPage,
+        NewMemo: NewMemo,
+    },
+    {
+        navigationOptions: {
+            title: 'MemoPage',
+            headerBackTitle: '',
+            headerStyle: {
+                backgroundColor: 'tomato'
+            },
+            headerTintColor: '#FFEECC'
+        }
+    }
+)
+
 const App = SwitchNavigator(
     {
         Splash: Splash,
         SignIn: SignIn,
-        Main: Main,
+        Main: MainStack,
     },
     {
         initialRouteName: 'Splash',
