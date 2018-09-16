@@ -1638,7 +1638,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   _reactNative.AppRegistry.registerComponent(_app2.name, function () {
     return _app.default;
   });
-},0,[1,507,685],"index.js");
+},0,[1,507,686],"index.js");
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   'use strict';
 
@@ -79556,10 +79556,16 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
     MemoPage: _MemoPage.MemoPage,
     NewMemo: _NewMemo.NewMemo
   });
+  var NewsNavigator = (0, _reactNavigation.createStackNavigator)({
+    NewsPage: _NewsPage.NewsPage
+  });
+  var UserNavigator = (0, _reactNavigation.createStackNavigator)({
+    UserPage: _UserPage.UserPage
+  });
   var Main = (0, _reactNavigation.createBottomTabNavigator)({
     Memo: MemoNavigator,
-    News: _NewsPage.NewsPage,
-    User: _UserPage.UserPage
+    News: NewsNavigator,
+    User: UserNavigator
   }, {
     navigationOptions: function navigationOptions(_ref) {
       var navigation = _ref.navigation;
@@ -79584,10 +79590,11 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
             color: tintColor,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 60
+              lineNumber: 72
             }
           });
-        }
+        },
+        tabBarVisible: navigation.state.index == 0 || navigation.state.index == null ? true : false
       };
     },
     tabBarOptions: {
@@ -79607,7 +79614,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   });
   var _default = App;
   exports.default = _default;
-},507,[37,1,508,559,560,679,680,681,682,686,683,684],"src/container/app.js");
+},507,[37,1,508,559,560,679,680,681,682,683,684,685],"src/container/app.js");
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -101894,214 +101901,6 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.UserPage = void 0;
-
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "react"));
-
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./../../node_modules/react-transform-hmr/lib/index.js"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
-
-  var _jsxFileName = "/Users/eric/React-Native/EvenEver/EvenEverApp/src/pages/UserPage.js";
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } _setPrototypeOf(subClass.prototype, superClass && superClass.prototype); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-  function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-  function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-  function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-  function _getPrototypeOf(o) { _getPrototypeOf = Object.getPrototypeOf || function _getPrototypeOf(o) { return o.__proto__; }; return _getPrototypeOf(o); }
-
-  var _components = {
-    UserPage: {
-      displayName: "UserPage"
-    }
-  };
-
-  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
-    filename: "/Users/eric/React-Native/EvenEver/EvenEverApp/src/pages/UserPage.js",
-    components: _components,
-    locals: [module],
-    imports: [_react.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var UserPage = function (_Component) {
-    function UserPage() {
-      _classCallCheck(this, UserPage);
-
-      return _possibleConstructorReturn(this, _getPrototypeOf(UserPage).apply(this, arguments));
-    }
-
-    _createClass(UserPage, [{
-      key: "render",
-      value: function render() {
-        return _react.default.createElement(_reactNative.View, {
-          style: styles.container,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 12
-          }
-        }, _react.default.createElement(_reactNative.Text, {
-          style: styles.welcome,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 13
-          }
-        }, "User"));
-      }
-    }]);
-
-    _inherits(UserPage, _Component);
-
-    return UserPage;
-  }(_react.Component);
-
-  exports.UserPage = UserPage;
-  exports.UserPage = UserPage = _wrapComponent("UserPage")(UserPage);
-
-  var styles = _reactNative.StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#F5FCFF'
-    },
-    welcome: {
-      fontSize: 20,
-      textAlign: 'center',
-      margin: 10
-    }
-  });
-},683,[37,87,1],"src/pages/UserPage.js");
-__d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.NewsPage = void 0;
-
-  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "react"));
-
-  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./../../node_modules/react-transform-hmr/lib/index.js"));
-
-  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
-
-  var _jsxFileName = "/Users/eric/React-Native/EvenEver/EvenEverApp/src/pages/NewsPage.js";
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-  function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } _setPrototypeOf(subClass.prototype, superClass && superClass.prototype); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-  function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-  function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-  function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-  function _getPrototypeOf(o) { _getPrototypeOf = Object.getPrototypeOf || function _getPrototypeOf(o) { return o.__proto__; }; return _getPrototypeOf(o); }
-
-  var _components = {
-    NewsPage: {
-      displayName: "NewsPage"
-    }
-  };
-
-  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
-    filename: "/Users/eric/React-Native/EvenEver/EvenEverApp/src/pages/NewsPage.js",
-    components: _components,
-    locals: [module],
-    imports: [_react.default]
-  });
-
-  function _wrapComponent(id) {
-    return function (Component) {
-      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
-    };
-  }
-
-  var NewsPage = function (_Component) {
-    function NewsPage() {
-      _classCallCheck(this, NewsPage);
-
-      return _possibleConstructorReturn(this, _getPrototypeOf(NewsPage).apply(this, arguments));
-    }
-
-    _createClass(NewsPage, [{
-      key: "render",
-      value: function render() {
-        return _react.default.createElement(_reactNative.View, {
-          style: styles.container,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 12
-          }
-        }, _react.default.createElement(_reactNative.Text, {
-          style: styles.welcome,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 13
-          }
-        }, "News"));
-      }
-    }]);
-
-    _inherits(NewsPage, _Component);
-
-    return NewsPage;
-  }(_react.Component);
-
-  exports.NewsPage = NewsPage;
-  exports.NewsPage = NewsPage = _wrapComponent("NewsPage")(NewsPage);
-
-  var styles = _reactNative.StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#F5FCFF'
-    },
-    welcome: {
-      fontSize: 20,
-      textAlign: 'center',
-      margin: 10
-    }
-  });
-},684,[37,87,1],"src/pages/NewsPage.js");
-__d(function(global, require, module, exports) {
-  module.exports = {
-  "name": "EvenEverApp",
-  "displayName": "EvenEverApp"
-};
-},685,[],"app.json");
-__d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
   exports.NewMemo = void 0;
 
   var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "react"));
@@ -102232,7 +102031,231 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
       margin: 10
     }
   });
-},686,[37,87,1,508,559],"src/pages/MemoPages/NewMemo.js");
+},683,[37,87,1,508,559],"src/pages/MemoPages/NewMemo.js");
+__d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.UserPage = void 0;
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./../../node_modules/react-transform-hmr/lib/index.js"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _jsxFileName = "/Users/eric/React-Native/EvenEver/EvenEverApp/src/pages/UserPage.js";
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } _setPrototypeOf(subClass.prototype, superClass && superClass.prototype); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+  function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+  function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+  function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+  function _getPrototypeOf(o) { _getPrototypeOf = Object.getPrototypeOf || function _getPrototypeOf(o) { return o.__proto__; }; return _getPrototypeOf(o); }
+
+  var _components = {
+    UserPage: {
+      displayName: "UserPage"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/eric/React-Native/EvenEver/EvenEverApp/src/pages/UserPage.js",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var UserPage = function (_Component) {
+    function UserPage() {
+      _classCallCheck(this, UserPage);
+
+      return _possibleConstructorReturn(this, _getPrototypeOf(UserPage).apply(this, arguments));
+    }
+
+    _createClass(UserPage, [{
+      key: "render",
+      value: function render() {
+        return _react.default.createElement(_reactNative.View, {
+          style: styles.container,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 22
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.welcome,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 23
+          }
+        }, "User"));
+      }
+    }]);
+
+    _inherits(UserPage, _Component);
+
+    return UserPage;
+  }(_react.Component);
+
+  exports.UserPage = UserPage;
+  UserPage.navigationOptions = {
+    title: 'UserPage',
+    headerBackTitle: '',
+    headerStyle: {
+      backgroundColor: 'tomato'
+    },
+    headerTintColor: '#FFEECC'
+  };
+  exports.UserPage = UserPage = _wrapComponent("UserPage")(UserPage);
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#F5FCFF'
+    },
+    welcome: {
+      fontSize: 20,
+      textAlign: 'center',
+      margin: 10
+    }
+  });
+},684,[37,87,1],"src/pages/UserPage.js");
+__d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.NewsPage = void 0;
+
+  var _react = _interopRequireWildcard(_$$_REQUIRE(_dependencyMap[0], "react"));
+
+  var _index = _interopRequireDefault(_$$_REQUIRE(_dependencyMap[1], "./../../node_modules/react-transform-hmr/lib/index.js"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+
+  var _jsxFileName = "/Users/eric/React-Native/EvenEver/EvenEverApp/src/pages/NewsPage.js";
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+  function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } _setPrototypeOf(subClass.prototype, superClass && superClass.prototype); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+  function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+  function _possibleConstructorReturn(self, call) { if (call && (typeof call === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+  function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+  function _getPrototypeOf(o) { _getPrototypeOf = Object.getPrototypeOf || function _getPrototypeOf(o) { return o.__proto__; }; return _getPrototypeOf(o); }
+
+  var _components = {
+    NewsPage: {
+      displayName: "NewsPage"
+    }
+  };
+
+  var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index.default)({
+    filename: "/Users/eric/React-Native/EvenEver/EvenEverApp/src/pages/NewsPage.js",
+    components: _components,
+    locals: [module],
+    imports: [_react.default]
+  });
+
+  function _wrapComponent(id) {
+    return function (Component) {
+      return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+    };
+  }
+
+  var NewsPage = function (_Component) {
+    function NewsPage(props) {
+      _classCallCheck(this, NewsPage);
+
+      return _possibleConstructorReturn(this, _getPrototypeOf(NewsPage).call(this, props));
+    }
+
+    _createClass(NewsPage, [{
+      key: "render",
+      value: function render() {
+        return _react.default.createElement(_reactNative.View, {
+          style: styles.container,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 24
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.welcome,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 25
+          }
+        }, "News"));
+      }
+    }]);
+
+    _inherits(NewsPage, _Component);
+
+    return NewsPage;
+  }(_react.Component);
+
+  exports.NewsPage = NewsPage;
+  NewsPage.navigationOptions = {
+    title: 'NewsPage',
+    headerBackTitle: '',
+    headerStyle: {
+      backgroundColor: 'tomato'
+    },
+    headerTintColor: '#FFEECC'
+  };
+  exports.NewsPage = NewsPage = _wrapComponent("NewsPage")(NewsPage);
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#F5FCFF'
+    },
+    welcome: {
+      fontSize: 20,
+      textAlign: 'center',
+      margin: 10
+    }
+  });
+},685,[37,87,1],"src/pages/NewsPage.js");
+__d(function(global, require, module, exports) {
+  module.exports = {
+  "name": "EvenEverApp",
+  "displayName": "EvenEverApp"
+};
+},686,[],"app.json");
 require(263);
 require(0);
 //# sourceMappingURL=index.map

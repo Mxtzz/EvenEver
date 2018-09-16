@@ -39,11 +39,23 @@ const MemoNavigator = createStackNavigator(
     }
 );
 
+const NewsNavigator = createStackNavigator(
+    {
+        NewsPage: NewsPage,
+    }
+);
+
+const UserNavigator = createStackNavigator(
+    {
+        UserPage: UserPage,
+    }
+);
+
 const Main = createBottomTabNavigator(
     {
         Memo: MemoNavigator,
-        News: NewsPage,
-        User: UserPage,
+        News: NewsNavigator,
+        User: UserNavigator,
     },{
         navigationOptions: ({ navigation }) => ({
             tabBarIcon: ({ focused, tintColor }) => {
@@ -59,6 +71,7 @@ const Main = createBottomTabNavigator(
 
                 return <_Icon name={iconName} size={25} color={tintColor} />;
             },
+            tabBarVisible: navigation.state.index == 0 || navigation.state.index == null ? true : false,
         }),
         tabBarOptions: {
             activeTintColor: 'tomato',
@@ -66,8 +79,9 @@ const Main = createBottomTabNavigator(
             tabStyle: {
                 backgroundColor: '#FFEECC'
                 // backgroundColor: 'gray'
-            }
+            },
         },
+        
     }
 );
 

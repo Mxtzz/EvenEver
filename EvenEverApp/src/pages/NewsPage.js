@@ -7,6 +7,18 @@ import {
 } from 'react-native';
 
 export class NewsPage extends Component {
+    constructor(props){
+        super(props);
+    }
+    static navigationOptions = {
+        title: 'NewsPage',
+        headerBackTitle: '',
+        headerStyle: {
+            backgroundColor: 'tomato'
+        },
+        headerTintColor: '#FFEECC'
+    };
+
     render() {
         return (
             <View style={styles.container}>

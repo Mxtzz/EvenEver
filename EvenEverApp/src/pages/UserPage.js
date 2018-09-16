@@ -7,6 +7,16 @@ import {
 } from 'react-native';
 
 export class UserPage extends Component {
+
+    static navigationOptions = {
+        title: 'UserPage',
+        headerBackTitle: '',
+        headerStyle: {
+            backgroundColor: 'tomato'
+        },
+        headerTintColor: '#FFEECC'
+    };
+
     render() {
         return (
             <View style={styles.container}>
