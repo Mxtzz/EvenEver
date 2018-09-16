@@ -9,7 +9,7 @@ import {
 export class UserPage extends Component {
 
     static navigationOptions = {
-        title: 'UserPage',
+        title: 'User',
         headerBackTitle: '',
         headerStyle: {
             backgroundColor: 'tomato'

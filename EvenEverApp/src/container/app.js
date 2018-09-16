@@ -32,11 +32,52 @@ const SignIn = createStackNavigator(
     }
 )
 
+const MemoStack = createStackNavigator(
+    {
+        Memo: {
+            screen: MemoPage,
+        }
+    },
+    {
+        initialRouteName: 'Memo'
+    }
+);
+
+const NewsStack = createStackNavigator(
+    {
+        News: {
+            screen: NewsPage,
+            navigationOptions: {
+                title: 'NewsPage',
+            },
+        }
+    },
+    {
+        initialRouteName: 'News'
+    }
+);
+
+const UserStack = createStackNavigator(
+    {
+        User: {
+            screen: UserPage,
+            navigationOptions: {
+                title: 'UserPage',
+            },
+        }
+    },
+    {
+        initialRouteName: 'User'
+    }
+)
+
 const TabPage = createBottomTabNavigator(
     {
-        Memo: MemoPage,
-        News: NewsPage,
-        User: UserPage,
+        Memo: { 
+            screen: MemoStack,
+        },
+        News: NewsStack,
+        User: UserStack,
     },{
         navigationOptions: ({ navigation }) => ({
             tabBarIcon: ({ focused, tintColor }) => {
@@ -49,7 +90,6 @@ const TabPage = createBottomTabNavigator(
                 }else if(routeName === 'User'){
                     iconName = 'baffled'
                 }
-
                 return <_Icon name={iconName} size={25} color={tintColor} />;
             },
         }),
@@ -58,29 +98,24 @@ const TabPage = createBottomTabNavigator(
             inactiveTintColor: 'gray',
             tabStyle: {
                 backgroundColor: '#FFEECC'
-                // backgroundColor: 'gray'
             },
         },
-        
     }
 );
 
 const MainStack = createStackNavigator(
     {
-        TabPage: TabPage,
-        MemoPage: MemoPage,
-        NewMemo: NewMemo,
+        TabPage: {   
+            screen: TabPage,
+            navigationOptions:{
+                header: null
+            }
+        },
+        NewMemo: { 
+            screen: NewMemo,
+        },
     },
-    {
-        navigationOptions: {
-            title: 'MemoPage',
-            headerBackTitle: '',
-            headerStyle: {
-                backgroundColor: 'tomato'
-            },
-            headerTintColor: '#FFEECC'
-        }
-    }
+    
 )
 
 const App = SwitchNavigator(

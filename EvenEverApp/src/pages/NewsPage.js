@@ -11,7 +11,7 @@ export class NewsPage extends Component {
         super(props);
     }
     static navigationOptions = {
-        title: 'NewsPage',
+        title: 'News',
         headerBackTitle: '',
         headerStyle: {
             backgroundColor: 'tomato'

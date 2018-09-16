@@ -19,8 +19,14 @@ export class MemoPage extends Component {
     state = {
         fadeAnim: new Animated.Value(0),  // 透明度初始值设为0
     }
-    
-    
+    static navigationOptions = {
+        headerTitle: 'MemoPage',
+        headerBackTitle: '',
+        headerStyle: {
+            backgroundColor: 'tomato'
+        },
+        headerTintColor: '#FFEECC',
+    };
     componentDidMount() {
         Animated.timing(                  // 随时间变化而执行动画
             this.state.fadeAnim,            // 动画中的变量值

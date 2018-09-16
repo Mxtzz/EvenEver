@@ -79552,20 +79552,39 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   }, {
     initialRouteName: 'Login'
   });
-  var MemoNavigator = (0, _reactNavigation.createStackNavigator)({
-    MemoPage: _MemoPage.MemoPage,
-    NewMemo: _NewMemo.NewMemo
+  var MemoStack = (0, _reactNavigation.createStackNavigator)({
+    Memo: {
+      screen: _MemoPage.MemoPage
+    }
+  }, {
+    initialRouteName: 'Memo'
   });
-  var NewsNavigator = (0, _reactNavigation.createStackNavigator)({
-    NewsPage: _NewsPage.NewsPage
+  var NewsStack = (0, _reactNavigation.createStackNavigator)({
+    News: {
+      screen: _NewsPage.NewsPage,
+      navigationOptions: {
+        title: 'NewsPage'
+      }
+    }
+  }, {
+    initialRouteName: 'News'
   });
-  var UserNavigator = (0, _reactNavigation.createStackNavigator)({
-    UserPage: _UserPage.UserPage
+  var UserStack = (0, _reactNavigation.createStackNavigator)({
+    User: {
+      screen: _UserPage.UserPage,
+      navigationOptions: {
+        title: 'UserPage'
+      }
+    }
+  }, {
+    initialRouteName: 'User'
   });
-  var Main = (0, _reactNavigation.createBottomTabNavigator)({
-    Memo: MemoNavigator,
-    News: NewsNavigator,
-    User: UserNavigator
+  var TabPage = (0, _reactNavigation.createBottomTabNavigator)({
+    Memo: {
+      screen: MemoStack
+    },
+    News: NewsStack,
+    User: UserStack
   }, {
     navigationOptions: function navigationOptions(_ref) {
       var navigation = _ref.navigation;
@@ -79590,11 +79609,10 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
             color: tintColor,
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 72
+              lineNumber: 93
             }
           });
-        },
-        tabBarVisible: navigation.state.index == 0 || navigation.state.index == null ? true : false
+        }
       };
     },
     tabBarOptions: {
@@ -79605,10 +79623,21 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
       }
     }
   });
+  var MainStack = (0, _reactNavigation.createStackNavigator)({
+    TabPage: {
+      screen: TabPage,
+      navigationOptions: {
+        header: null
+      }
+    },
+    NewMemo: {
+      screen: _NewMemo.NewMemo
+    }
+  });
   var App = (0, _reactNavigation.SwitchNavigator)({
     Splash: _Splash.Splash,
     SignIn: SignIn,
-    Main: Main
+    Main: MainStack
   }, {
     initialRouteName: 'Splash'
   });
@@ -101846,7 +101875,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
           }],
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 44
+            lineNumber: 43
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: styles.welcome,
@@ -101855,13 +101884,13 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 45
+            lineNumber: 44
           }
         }, "EvenEver"), _react.default.createElement(_reactNative.Text, {
           style: styles.instructions,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 46
+            lineNumber: 45
           }
         }, "A Great Memo"));
       }
@@ -101874,7 +101903,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   exports.MemoPage = MemoPage;
   MemoPage.navigationOptions = {
-    title: 'MemoPage',
+    headerTitle: 'MemoPage',
     headerBackTitle: '',
     headerStyle: {
       backgroundColor: 'tomato'
@@ -101886,8 +101915,6 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   var styles = _reactNative.StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
       backgroundColor: '#FFEECC'
     },
     welcome: {
@@ -101956,6 +101983,10 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   var _Icon = (0, _reactNativeVectorIcons.createIconSetFromIcoMoon)(_selection.default);
 
+  var _Dimensions$get = _reactNative.Dimensions.get('window'),
+      width = _Dimensions$get.width,
+      height = _Dimensions$get.height;
+
   var NewMemo = function (_Component) {
     function NewMemo(props) {
       var _this;
@@ -101981,7 +102012,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
           style: styles.container,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 39
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: styles.welcome,
@@ -101990,15 +102021,26 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 40
           }
         }, "EvenEver"), _react.default.createElement(_reactNative.Text, {
           style: styles.instructions,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 41
           }
-        }, "New Memo"));
+        }, "New Memo"), _react.default.createElement(_reactNative.View, {
+          style: styles.footer,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 42
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 43
+          }
+        }, "12312312")));
       }
     }]);
 
@@ -102029,6 +102071,13 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
       fontSize: 20,
       textAlign: 'center',
       margin: 10
+    },
+    footer: {
+      position: 'absolute',
+      height: 50,
+      backgroundColor: 'gray',
+      bottom: 0,
+      width: width
     }
   });
 },683,[37,87,1,508,559],"src/pages/MemoPages/NewMemo.js");
@@ -102118,7 +102167,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   exports.UserPage = UserPage;
   UserPage.navigationOptions = {
-    title: 'UserPage',
+    title: 'User',
     headerBackTitle: '',
     headerStyle: {
       backgroundColor: 'tomato'
@@ -102227,7 +102276,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
   exports.NewsPage = NewsPage;
   NewsPage.navigationOptions = {
-    title: 'NewsPage',
+    title: 'News',
     headerBackTitle: '',
     headerStyle: {
       backgroundColor: 'tomato'
