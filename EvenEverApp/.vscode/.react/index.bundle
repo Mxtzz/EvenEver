@@ -101462,6 +101462,10 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
     };
   }
 
+  var _Dimensions$get = _reactNative.Dimensions.get('window'),
+      width = _Dimensions$get.width,
+      height = _Dimensions$get.height;
+
   var Splash = function (_Component) {
     function Splash(props) {
       _classCallCheck(this, Splash);
@@ -101476,7 +101480,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
 
         setTimeout(function () {
           _this.props.navigation.navigate('Main');
-        }, 1000);
+        }, 2000);
       }
     }, {
       key: "render",
@@ -101487,12 +101491,12 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 23
+            lineNumber: 26
           }
         }, _react.default.createElement(SplashMain, {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 24
+            lineNumber: 27
           }
         }));
       }
@@ -101516,36 +101520,46 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
     _createClass(SplashMain, [{
       key: "render",
       value: function render() {
-        var _this2 = this;
-
         return _react.default.createElement(_reactNative.View, {
           style: styles.container,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 40
           }
-        }, _react.default.createElement(_reactNative.Text, {
-          style: styles.welcome,
-          onPress: function onPress() {
-            _this2.props.navigation.navigate('Main');
+        }, _react.default.createElement(_reactNative.Image, {
+          source: _$$_REQUIRE(_dependencyMap[3], '../image/splash.jpg'),
+          style: styles.backgroundImg,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 41
+          }
+        }), _react.default.createElement(_reactNative.View, {
+          style: styles.title,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 42
+          }
+        }, _react.default.createElement(_reactNative.View, {
+          style: {
+            position: 'relative'
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 43
           }
-        }, "EvenEver"), _react.default.createElement(_reactNative.Text, {
-          style: styles.instructions,
+        }, _react.default.createElement(_reactNative.Text, {
+          style: styles.welcome,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 39
+            lineNumber: 44
           }
-        }, "A Great Memo"), _react.default.createElement(_reactNative.Text, {
+        }, "Even Ever"), _react.default.createElement(_reactNative.Text, {
           style: styles.version,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 40
+            lineNumber: 45
           }
-        }, "v0.0.1"));
+        }, "v0.0.1"))));
       }
     }]);
 
@@ -101560,27 +101574,33 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   var styles = _reactNative.StyleSheet.create({
     container: {
       flex: 1,
-      justifyContent: 'center',
+      justifyContent: 'flex-end',
       alignItems: 'center',
       backgroundColor: '#FFEECC'
     },
-    welcome: {
-      fontSize: 40,
-      textAlign: 'center',
-      margin: 10
+    backgroundImg: {
+      height: height,
+      width: width
     },
-    instructions: {
+    title: {
+      position: 'absolute',
+      paddingBottom: 80
+    },
+    welcome: {
+      fontStyle: 'italic',
+      fontSize: 40,
+      color: '#333',
       textAlign: 'center',
-      color: '#333333',
-      marginBottom: 5
+      paddingRight: 10
     },
     version: {
       textAlign: 'center',
       color: '#333333',
-      marginTop: 150
+      position: 'absolute',
+      right: -36
     }
   });
-},679,[37,87,1],"src/pages/Splash.js");
+},679,[37,87,1,687],"src/pages/Splash.js");
 __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
   Object.defineProperty(exports, "__esModule", {
     value: true
@@ -101875,7 +101895,7 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
           }],
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 43
+            lineNumber: 40
           }
         }, _react.default.createElement(_reactNative.Text, {
           style: styles.welcome,
@@ -101884,13 +101904,13 @@ __d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
           },
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 44
+            lineNumber: 41
           }
         }, "EvenEver"), _react.default.createElement(_reactNative.Text, {
           style: styles.instructions,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 45
+            lineNumber: 42
           }
         }, "A Great Memo"));
       }
@@ -102305,6 +102325,18 @@ __d(function(global, require, module, exports) {
   "displayName": "EvenEverApp"
 };
 },686,[],"app.json");
+__d(function (global, _$$_REQUIRE, module, exports, _dependencyMap) {
+  module.exports = _$$_REQUIRE(_dependencyMap[0], "react-native/Libraries/Image/AssetRegistry").registerAsset({
+    "__packager_asset": true,
+    "httpServerLocation": "/assets/src/image",
+    "width": 1080,
+    "height": 1920,
+    "scales": [1],
+    "hash": "4d9952e675b823cc2c61c4085b8021ee",
+    "name": "splash",
+    "type": "jpg"
+  });
+},687,[82],"src/image/splash.jpg");
 require(263);
 require(0);
 //# sourceMappingURL=index.map

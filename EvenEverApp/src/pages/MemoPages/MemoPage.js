@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import {
-    Platform,
     StyleSheet,
     Text,
-    View,
     Animated,
-    Easing,
 } from 'react-native';
 
 import { createIconSetFromIcoMoon } from 'react-native-vector-icons';
@@ -17,7 +14,7 @@ export class MemoPage extends Component {
         super(props);
     }
     state = {
-        fadeAnim: new Animated.Value(0),  // 透明度初始值设为0
+        fadeAnim: new Animated.Value(0),
     }
     static navigationOptions = {
         headerTitle: 'MemoPage',
@@ -28,11 +25,11 @@ export class MemoPage extends Component {
         headerTintColor: '#FFEECC',
     };
     componentDidMount() {
-        Animated.timing(                  // 随时间变化而执行动画
-            this.state.fadeAnim,            // 动画中的变量值
+        Animated.timing(
+            this.state.fadeAnim,
             {
-              toValue: 1,                   // 透明度最终变为1，即完全不透明
-              duration: 1000,              // 让动画持续一段时间
+              toValue: 1,
+              duration: 1000,
             }
           ).start(); 
     }
